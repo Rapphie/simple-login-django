@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    @include('components.cdn')
-
     <style>
         * {
             margin: 0px;
@@ -131,26 +129,20 @@
 <body id="body-animation">
 
 <div class="container-fluid position-relative bg-login">
-@if($errors->any())
-    @foreach($errors->all() as $error)
       <div class="alert alert-danger position-absolute w-100 alert-dismissible fade show" role="alert">
         <i class="fa fa-fw fa-warning text-black"></i>
         <strong class="text-black">Error!</strong> {{$error}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
-    @endforeach
-@endif
+
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-12 login-card" id="form-animation">
                 <div class="row">
-                    <div class="col-md-5 left-pic">
-                    </div>
-
+                    <div class="col-md-5 left-pic"></div>
                     <div class="col-md-7 login-form">
                                 <div class="logo mx-auto">
                                     <img src="images/logo-removebg.png" alt="logo">
-
                                 </div>
                                 <form method="post" action="/login" id="form" autocomplete="off"/>
                                     @csrf
@@ -159,11 +151,10 @@
                                     <input name="user_password" Placeholder="Enter Password" type="password" class="form-control"/>
                                 <div class="row form-footer">
                                 <div class="col-md-6 float-end">
-                                     <button id="btnLogin" onclick="ani()" type="submit" class="btn btn-outline-light">LOGIN</button>
+                                    <button id="btnLogin" onclick="ani()" type="submit" class="btn btn-outline-light">LOGIN</button>
                                 </div>
                                 </div>
                                 </form>
-
                     </div>
                 </div>
             </div>
@@ -187,10 +178,10 @@
 
           EL_formSubmitBtn.disabled = true; // Disable the submit button
 
-          setTimeout(function() {
+        setTimeout(function() {
             EL_form.submit(); // Or do AJAX stuff here
             EL_formSubmitBtn.disabled = false; // Enable the submit button
-          }, 6200);
+        }, 6200);
         };
 
         EL_form.addEventListener("submit", Progress);

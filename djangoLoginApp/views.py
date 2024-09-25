@@ -41,3 +41,7 @@ def sign_out(request):
 
 def portfolio(request):
     return render(request, "portfolio.html")
+
+
+def register(request):
+    return render(request, "register.html")
