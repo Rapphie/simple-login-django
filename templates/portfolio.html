@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{% static 'globals.css' %}" />
+    <link rel="stylesheet" href="{% static 'styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="body">
+      <div class="main">
+        <div class="overlap-group">
+          <div class="intro">
+            <div class="col">
+              <div class="mb">
+                <div class="heading">
+                  <div class="flexcontainer">
+                    <p class="text-i">
+                      <span class="text-wrapper">Christian Plasabas<br /></span>
+                    </p>
+                    <p class="text-i">
+                      <span class="span">Backend Programmer</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img class="profile" src="{{ MEDIA_URL }}img/profile.png" />
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="row">
+            <div class="frame-wrapper">
+              <div class="div">
+                <div class="heading-2">
+                  <img class="line" src="{{ MEDIA_URL }}img/line-4.svg" />
+                  <div class="text-wrapper-2">INTRODUCTION</div>
+                </div>
+                <div class="div">
+                  <p class="lorem-ipsum-dolor">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec et ex ut&nbsp;&nbsp;nibh hendrerit pellentesque.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-wrapper">
+        <div class="container-2">
+          <div class="heading-2">
+            <img class="line" src="{{ MEDIA_URL }}img/line-4.svg" />
+            <div class="text-wrapper-3">What I Do</div>
+          </div>
+          <div class="row-2">
+            <div class="col-2">
+              <img class="web-development" src="{{ MEDIA_URL }}img/web-development-1.png" />
+              <div class="interactive-card">
+                <div class="nature-wrapper">
+                  <div class="nature">Web development</div>
+                </div>
+                <p class="p">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque eu scelerisque etiam amet, mauris dictum arcu.
+                  Laoreet ut.
+                </p>
+                <img class="arrow" />
+              </div>
+            </div>
+            <div class="col-2">
+              <img class="database" src="{{ MEDIA_URL }}img/database-1.png" />
+              <div class="interactive-card-2">
+                <div class="nature-wrapper">
+                  <div class="nature">Database</div>
+                </div>
+                <p class="p">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget
+                  venenatis cursus non felis risus rutrum elementum. Dolor amet.
+                </p>
+                <img class="arrow" />
+              </div>
+            </div>
+            <div class="col-3">
+              <img class="html" src="{{ MEDIA_URL }}img/html-1.png" />
+              <div class="interactive-card-3">
+                <div class="nature-wrapper">
+                  <div class="nature">Scripting</div>
+                </div>
+                <p class="p">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mi,
+                  vitae eget et vitae, mi. Amet sapien.
+                </p>
+                <img class="arrow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="interactive-carousel">
+        <div class="carousel">
+          <div class="btn-swiper-button">
+            <div class="overlap-group-2">
+              <div class="rectangle"></div>
+              <div class="vector-wrapper">
+                <img class="vector" src="{{ MEDIA_URL }}img/image-1.svg" />
+              </div>
+            </div>
+          </div>
+          <div class="row-wrapper">
+            <div class="col-wrapper">
+              <div class="mb-wrapper">
+                <div class="mb">
+                  <div class="heading-3">
+                    <img class="line" src="{{ MEDIA_URL }}img/line-4.svg" />
+                    <div class="interactive-title">WRITTEN IN LARAVEL</div>
+                  </div>
+                  <div class="heading">
+                    <div class="flexcontainer-i">
+                      <p class="span-wrapper">
+                        <span class="text-wrapper-4">Point of Sale<br /></span>
+                      </p>
+                      <p class="span-wrapper">
+                        <span class="text-wrapper-5">System</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="vector-wrapper">
+            <img class="img" src="{{ MEDIA_URL }}img/vector.svg" />
+          </div>
+        </div>
+      </div>
+      <div class="div-wrapper">
+        <div class="container-3">
+          <div class="row">
+            <div class="col-4">
+              <div class="frame">
+                <div class="heading-2">
+                  <img class="line" src="{{ MEDIA_URL }}img/line-4.svg" />
+                  <div class="text-wrapper-2">REACH OUT</div>
+                </div>
+                <div class="text-wrapper-6">Contact Information</div>
+              </div>
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="card-wrapper">
+              <div class="card">
+                <div class="card-body">
+                  <div class="div-2">
+                    <div class="input">
+                      <div class="form-input-input">
+                        <div class="input-label">Name*</div>
+                        <div class="placeholder">e.g. John Doe</div>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <div class="form-input-input">
+                        <div class="input-label">Mail*</div>
+                        <div class="placeholder">e.g. jdoe@email.com</div>
+                      </div>
+                    </div>
+                    <div class="input">
+                      <div class="form-input-input-2">
+                        <div class="text-area">
+                          <div class="input-label">Comment</div>
+                          <div class="placeholder-2">Leave me a message...</div>
+                        </div>
+                        <div class="resize">
+                          <img class="line-2" src="{{ MEDIA_URL }}img/line-3.svg" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="btn-required">
+                      <button class="btn-buttons">
+                        <div class="primary">Submit</div>
+                      </button>
+                      <div class="form-required-note">*Required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
