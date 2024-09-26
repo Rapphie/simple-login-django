@@ -1,3 +1,6 @@
+html{
+  scroll-behavior: smooth;
+}
 .body {
   display: flex;
   flex-direction: column;
@@ -709,7 +712,6 @@
   height: 5px;
   top: 111px;
   left: 427px;
-  background-image: url(./img/line-2.svg);
   background-size: 100% 100%;
 }
 
@@ -771,3 +773,33 @@
   line-height: var(--paragraphs-p-small-line-height);
   font-style: var(--paragraphs-p-small-font-style);
 }
+
+#scroll-to-top {
+  position: fixed !important;
+  width: 50px;
+  height: 50px;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+  text-align: center;
+  color: #fff;
+  background: #991c1c;
+  line-height: 46px;
+  font-weight: bolder;
+  border-radius: 5px;
+}
+
+
+
+#scroll-to-top:hover {
+  background: #861e1e;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.primary{
+  cursor: pointer;
+}
+
+
