@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Logout</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9fc; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+        margin: 0;
+      }
+      .logout-confirm-container {
+        background: #ffffff; 
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        width: 400px; 
+        text-align: center; 
+      }
+      h2 {
+        margin-bottom: 20px;
+        color: #333; /* Dark text color */
+      }
+      p {
+        margin-bottom: 30px;
+        color: #555;
+      }
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #222222;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s; 
+      }
+      button:hover {
+        background-color: #000; 
+      }
+      a {
+        display: inline-block; 
+        margin-top: 15px;
+        color: #000; 
+        text-decoration: none;
+        font-size: 14px;
+      }
+      a:hover {
+        text-decoration: underline; 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logout-confirm-container">
+      <h2>Confirm Logout</h2>
+      <p>Are you sure you want to log out?</p>
+      <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <button type="submit" aria-label="Confirm Logout">Yes, Logout</button>
+      </form>
+      <p>
+        <a href="{% url 'home' %}">Cancel</a>
+      </p>
+    </div>
+  </body>
+</html>

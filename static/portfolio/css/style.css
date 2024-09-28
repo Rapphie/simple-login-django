@@ -502,7 +502,9 @@ html{
   border-radius: 12px;
   border: 1px solid;
   border-color: #ffffff;
+  cursor: pointer;
 }
+
 
 .body .img {
   top: 13px;
