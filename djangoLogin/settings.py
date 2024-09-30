@@ -1,5 +1,5 @@
 import os
-
+from dotenv import load_dotenv
 from pathlib import Path
 
 # Define BASE_DIR
@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
-
+load_dotenv()
 SECRET_KEY = "django-insecure-_fmnzb%kwsy6581z-7e_2hl*5x(ps-^e93mbpo%%g5z#afhys("
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -33,12 +33,13 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
 ]
-
+GOOGLE_OAUTH_CLIENT_ID = os.getenv("GOOGLE_OAUTH_CLIENT_ID")
+GOOGLE_OAUTH_CLIENT_SECRET = os.getenv("GOOGLE_OAUTH_CLIENT_SECRET")
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         "APP": {
-            "client_id": "",
-            "secret": "",
+            "client_id": GOOGLE_OAUTH_CLIENT_ID,
+            "secret": GOOGLE_OAUTH_CLIENT_SECRET,
         },
         "SCOPE": [
             "profile",

@@ -16,3 +16,13 @@ function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  var messageDiv = document.getElementById("message");
+  if (messageDiv) {
+    var messages = messageDiv.getElementsByClassName("message");
+    for (var i = 0; i < messages.length; i++) {
+      alert(messages[i].innerText);
+    }
+  }
+});

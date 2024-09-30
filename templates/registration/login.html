@@ -21,20 +21,19 @@
   <body>
     <div class="login-page">
       <div class="form">
-        {% if form.errors %}
-        <div class="error text-danger" style="font-size: 12px">
-          <ul style="list-style-type: none">
-            {% for field, errors in form.errors.items %} {% for error in errors %}
-            <li>{{field}}: {{ error }}</li>
-            {% endfor %} {% endfor %}
-          </ul>
+      {% if messages %}
+        <div id="message">
+          {% for message in messages %} {% if "success" in message.tags %}
+          <div class="{{ message.tags }} text-success" style="font-size: 12px">
+            {{ message }}
+          </div>
+          {% elif "error" in message.tags %}
+          <div class="{{ message.tags }} text-danger" style="font-size: 12px">
+            {{ message }}
+          </div>
+          {% endif %} {% endfor %}
         </div>
         {% endif %}
-        {% if messages %}
-    {% for message in messages %}
-        <div{% if message.tags %} class="{{ message.tags }} text-success"{% endif %} style="font-size: 12px;" id="message">{{ message }}</div>
-    {% endfor %}
-{% endif %}
         <form
           class="login-form"
           action="{% url 'account_login' %}"
@@ -71,14 +70,13 @@
         </form>
       </div>
     </div>
-    
   </body>
 </html>
 <script>
-    setTimeout(function() {
-        var messageElement = document.getElementById('message');
-        if (messageElement) {
-            messageElement.style.display = 'none';
-        }
-    }, 5000);
+  setTimeout(function () {
+    var messageElement = document.getElementById("message");
+    if (messageElement) {
+      messageElement.style.display = "none";
+    }
+  }, 10000);
 </script>

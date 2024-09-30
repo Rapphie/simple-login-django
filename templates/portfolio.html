@@ -215,6 +215,15 @@
         ><i class="fa fa-chevron-up"></i
       ></a>
     </footer>
+    {% if messages %}
+        <div id="message" style="display: none;">
+        {% for message in messages %}
+            {% if "success" in message.tags %}
+            <div{% if message.tags %} class="{{ message.tags }} text-success message"{% endif %} style="font-size: 12px;">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% endif %}
   <script src="{% static "portfolio/app.js" %}"></script>
   </body>
 </html>
