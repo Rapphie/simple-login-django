@@ -22,7 +22,7 @@
     <div class="login-page">
       <div class="form">
         {% if form.errors %}
-        <div class="error text-danger" style="font-size: 12px">
+        <div class="error text-danger" style="font-size: 12px" message>
           <ul style="list-style-type: none">
             {% for field, errors in form.errors.items %} {% for error in errors %}
             <li>{{field}}: {{ error }}</li>

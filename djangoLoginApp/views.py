@@ -15,7 +15,9 @@ from django.contrib.auth.models import User  # Import User model
 
 @login_required(login_url="account_login")
 def home(request):
-    return render(request, "portfolio.html")
+    if request.user.is_authenticated:
+        current_user = request.user
+    return render(request, "portfolio.html", {"current_user": current_user})
 
 
 class CustomLoginView(LoginView):
@@ -100,32 +102,4 @@ def logout_confirm(request):
     return render(request, "registration/logout_confirm.html")
 
 
-# [ ] make encryption logic
-def caesar_cipher(text, shift=3):
-    shifted_text = []
-    for char in text:
-        if char.isalpha():
-            base = ord("A") if char.isupper() else ord("a")
-            shifted_text.append(chr((ord(char) - base + shift) % 26 + base))
-        else:
-            shifted_text.append(char)
-    return "".join(shifted_text)
-
-
-def vigenere_cipher(text, key, encrypt=True):
-    result = []
-    key_index = 0
-    key = key.upper()
-
-    for char in text:
-        if char.isalpha():
-            base = ord("A") if char.isupper() else ord("a")
-            shift = ord(key[key_index % len(key)]) - ord("A")
-            if not encrypt:
-                shift = -shift
-            result.append(chr((ord(char) - base + shift) % 26 + base))
-            key_index += 1
-        else:
-            result.append(char)
-
-    return "".join(result)
+# [x] make encryption logic in javascript to take input
