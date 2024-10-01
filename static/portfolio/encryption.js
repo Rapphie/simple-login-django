@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     );
                     alert(`Decrypted Username: ${decrypted_username}`);
 
-                    var display_to_url_confirmation = confirm(`Username: ${encrypted_username} ✔\nEncrypted username: ${encrypted_username.result} ✔\nDecrypted username: ${decrypted_username} ✔\nDo you want to use it as the URL address?`);
+                    var display_to_url_confirmation = confirm(`Username: ${username} ✔\nEncrypted username: ${encrypted_username.result} ✔\nDecrypted username: ${decrypted_username} ✔\nDo you want to use it as the URL address?`);
                     if (display_to_url_confirmation) {
                         const newUrl = `/${decrypted_username}/${encrypted_username.result}`;
                         window.history.replaceState(null, '', newUrl);
