@@ -10,11 +10,7 @@ class UserLoginAttempt(models.Model):
     lockout_until = models.DateTimeField(null=True, blank=True)
 
     def is_locked_out(self):
-        if self.lockout_until and self.lockout_until > timezone.now():
-            return True
-        # Reset failed attempts if lockout period has expired
-        self.reset_failed_attempts()
-        return False
+        return self.lockout_until is not None and self.lockout_until > timezone.now()
 
     def reset_failed_attempts(self):
         self.failed_attempts = 0
@@ -22,13 +18,8 @@ class UserLoginAttempt(models.Model):
         self.save()
 
     def increment_failed_attempts(self):
-        self.failed_attempts += 1
-        if self.failed_attempts == 3:
-            self.lockout_until = timezone.now() + timedelta(minutes=3)
-        elif self.failed_attempts >= 3 and self.failed_attempts <= 5:
-            self.lockout_until = timezone.now() + timedelta(minutes=5)
-        elif self.failed_attempts >= 10:
-            self.lockout_until = timezone.now() + timedelta(days=1)
-        elif self.failed_attempts >= 50:
-            self.lockout_until = timezone.now() + timedelta(days=10)
-        self.save()
+        if not self.is_locked_out():
+            self.failed_attempts += 1
+            if self.failed_attempts == 3:
+                self.lockout_until = timezone.now() + timedelta(minutes=5)
+            self.save()
