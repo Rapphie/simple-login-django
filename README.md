@@ -4,8 +4,9 @@ A simple google login in which the oauth is used also integrated user register u
 
 ## Installation
 
-0. In order for the app to work rename the .envsample file to .env in the djangoLogin folder and paste the client id and secret in the .env<br>
-   [Get the client_id and secret here](https://docs.google.com/document/d/1XSqki1WFGAtaZ2xlj9rUcTjeOYjuQVKwKkG6EwGUKoI/edit?usp=sharing) <br>
+> [!IMPORTANT]  
+>0. In order for the app to work rename the .envsample file to .env in the djangoLogin folder and paste the client id and secret in the .env<br>
+>   [Get the client_id and secret here](https://docs.google.com/document/d/1XSqki1WFGAtaZ2xlj9rUcTjeOYjuQVKwKkG6EwGUKoI/edit?usp=sharing) <br>
 
 1. Clone the repository:
    ```bash
